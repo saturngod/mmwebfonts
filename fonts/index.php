@@ -89,7 +89,7 @@ if($font_type!="")
 {
 	$css ="@font-face {\nfont-family:".$font_family.";";
 
-	$font_path=$current_url."font/".$font_file.".".$font_type;
+	$font_path=$current_url.$font_file.".".$font_type;
 
 	if($browsername!="ie") {
 		$css=$css."\nsrc:local('".$font_family."'),";
