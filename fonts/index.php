@@ -15,6 +15,10 @@ if($font_file=='yunghkio') {
 	$font_file="yunghkio";
     $font_family="Yunghkio";
 }
+else if($font_file=="masterpiece") {
+	$font_file="masterpiece";
+    $font_family="Master Piece Uni Sans";
+}
 else if($font_file==='myanmar3') {
 	$font_file="myanmar3";
     $font_family="Myanmar3";
@@ -49,6 +53,11 @@ if($browsername=='iPhone' or $browsername=='iPad' and $font_file!='myanmar3') {
     $font_type="ttf";
 }
 
+if(!$is_mac && $font_file =="masterpiece") {
+	$font_family="Yunghkio";
+	$font_file="yunghkio";
+	$font_type="ttf";
+}
 if($is_mac && ($font_file=="padauk" || $font_file=="yunghkio")) {
 	$font_family="Masterpiece Uni Sans";
 	$font_file="masterpiece";
