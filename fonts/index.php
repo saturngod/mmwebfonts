@@ -41,7 +41,7 @@ if($browsername=="ie")
 	$font_type = "eot";
 }
 
-if($browsername=="chrome" && $is_mac) {
+if(($browsername=="chrome" || $browsername=="firefox")  && $is_mac) {
 	$font_file="myanmar3";
 	$font_family="Myanmar3";
 }
