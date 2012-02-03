@@ -2,12 +2,14 @@
 <html>
 	<head>
 	    <meta charset="UTF8"/>
-		<title>MyWebFonts</title>
+		<title>MMWebFonts</title>
 		<link rel="stylesheet" href="./stylesheets/bootstrap-1.1.0.min.css">
 		<link rel="stylesheet" href="./stylesheets/style.css">
         <link rel="stylesheet" href="./stylesheets/prettify.css">
 
         <link rel="stylesheet" href="./fonts/?font=yunghkio" type="text/css" media="screen" title="yunghkio" charset="utf-8">
+
+        <link rel="stylesheet" href="./fonts/?font=masterpiece" type="text/css" media="screen" title="masterpiece" charset="utf-8">
 
         <link rel="stylesheet" href="./fonts/?font=myanmar3" type="text/css" media="screen" title="yunghkio" charset="utf-8">
 
@@ -102,6 +104,7 @@
                     <p>MyWebFont support following font list.
                     <ul>
                         <li>Myanmar3 from (<a href="http://myanmarnlp.org.mm/">Myanmar NLP</a>)</li>
+                        <li>Masterpiece Uni Sans (only on Mac) from (<a href="http://prahita-tmhtet.blogspot.com/2010/07/masterpiece-uni-sans-for-mac-os-x.html">prahita-tmhtet</a>)
                         <li>Yunghkio from (<a href="http://www.yunghkio.com/unicode">Sai Di</a>)</li>
                         <li>MyMyanmar from (<a href="http://www.mymyanmar.net">MyMyanmar</a>)</li>
                         <li>Padauk from (<a href="http://www.thanlwinsoft.org/ThanLwinSoft/MyanmarUnicode/Fonts/Padauk.php">thanlwinsoft</a>)</li>
@@ -119,6 +122,10 @@
                     <p class="mymyanmar">မြန်မာစာသည် တို့စာ။</p>
                     <br/>
                     
+                    <p><strong>Masterpiece Uni Sans</strong> (<a href="http://prahita-tmhtet.blogspot.com/2010/07/masterpiece-uni-sans-for-mac-os-x.html">Masterpiece Uni Sans</a>)</p>
+                    <p class="masterpiece">မြန်မာစာသည် တို့စာ။</p>
+                    <br/>
+
                     <p><strong>Yunghkio</strong> (<a href="http://www.yunghkio.com/unicode">Sai Di</a>)</p>
                     <p class="yunghkio">မြန်မာစာသည် တို့စာ။</p>
                     <br/>
@@ -143,6 +150,7 @@
                         <select class="fontselect">
                         <option selected="selected" value="myanmar3">Myanmar3</option>
                         <option value="yunghkio">Yunghkio</option>
+                        <option value="masterpiece">Masterpiece Uni Sans</option>
                         <option value="padauk">Padauk</option>
                         <option value="mymyanmar">MyMyanmar</option>
                         <option value="zawgyi">Zawgyi-One</option>
@@ -157,8 +165,8 @@
                             <li class="tabs_code" id="import_click"><a href="#">@import</a></li>
                     </ul>
                     
-                    <pre class="prettyprint linenums" id="codeNormal">&lt;link href='http://mywebfont.appspot.com/css?font=myanmar3' rel='stylesheet' type='text/css'/&gt;</pre>
-                    <pre class="prettyprint linenums" id="codeImport">@import url('http://mywebfont.appspot.com/css?font=myanmar3');</pre>
+                    <pre class="prettyprint linenums" id="codeNormal">&lt;link href='http://mmwebfonts.comquas.com/fonts/?font=myanmar3' rel='stylesheet' type='text/css'/&gt;</pre>
+                    <pre class="prettyprint linenums" id="codeImport">@import url('http://mmwebfonts.comquas.com/fonts/?font=myanmar3');</pre>
                     
                     <h3>Font Family</h3>
                     <p>Add following code in stylesheet font family.</p>
@@ -254,13 +262,16 @@
 	   
 	   $(".fontselect").change(function(){
 	      
-	      $("#codeNormal").html("&lt;link href='http://mywebfont.appspot.com/css?font="+$(this).val()+"' rel='stylesheet' type='text/css'/&gt;");
-	      $("#codeImport").html("@import url('http://mywebfont.appspot.com/css?font="+$(this).val()+"');");
+	      $("#codeNormal").html("&lt;link href='http://mmwebfonts.comquas.com/fonts/?font="+$(this).val()+"' rel='stylesheet' type='text/css'/&gt;");
+	      $("#codeImport").html("@import url('http://mmwebfonts.comquas.com/fonts/?font="+$(this).val()+"');");
 	      
 	      font_family="";
 	      if($(this).val()=="myanmar3") {
 	          font_family="Myanmar3,Yunghkio,'Masterpiece Uni Sans'";
 	      }
+        else if($(this).val()=="masterpiece") {
+            font_family="'Masterpiece Uni Sans',Yunghkio,Myanmar3";
+        }
 	      else if($(this).val()=="yunghkio") {
 	          font_family="Yunghkio,Myanmar3,'Masterpiece Uni Sans'";
           }

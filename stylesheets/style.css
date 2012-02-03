@@ -76,6 +76,9 @@ padding-top: 60px;
     font-family:Yunghkio,Myanmar3,"Masterpiece Uni Sans";
 }
 
+.masterpiece {
+  font-family:"Masterpiece Uni Sans",Yunghkio,Myanmar3; 
+}
 .zawgyi {
     font-family:Zawgyi-One;
 }
