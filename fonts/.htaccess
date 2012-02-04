@@ -1,5 +1,6 @@
 <FilesMatch "\.(ttf|otf|eot|woff)$">
   <IfModule mod_headers.c>
     Header set Access-Control-Allow-Origin "*"
+    Header set Expires "Thu, 15 Apr 2020 20:00:00 GMT"
   </IfModule>
 </FilesMatch>
