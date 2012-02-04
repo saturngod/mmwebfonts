@@ -19,7 +19,7 @@ $visitor->setScreenResolution('1024x768');
 $session = new GoogleAnalytics\Session();
 
 // Assemble Page information
-$page = new GoogleAnalytics\Page('/index.php');
+$page = new GoogleAnalytics\Page('/fonts/index.php');
 $page->setTitle('mmwebfonts');
 
 // Track page view
