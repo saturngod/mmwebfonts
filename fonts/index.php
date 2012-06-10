@@ -31,7 +31,6 @@ if(ENABLE_ANALYTICS &&  $php_version>=5.0) {
 	$tracker->trackPageview($page, $session, $visitor);
 }
 
-
 //start page
 $current_url=substr(currentPageURL(),0,-9);
 
@@ -64,6 +63,18 @@ else if($font_file==='mymyanmar') {
 	$font_file="MyMMUnicodeUniversal";
     $font_family="MyMyanmar Universal";
 }
+else if($font_file=='unimon') {
+	$font_file="UniMon";
+	$font_family="Uni Mon";
+}
+else if($font_file=='unimon') {
+	$font_file="UniMon";
+	$font_family="Uni Mon";
+}
+else if($font_file=='imon') {
+	$font_file='iMon';
+	$font_family='iMon';
+}
 
 $browsername = get_browser_name();
 $font_type = "ttf";
@@ -75,8 +86,12 @@ if($browsername=="ie")
 }
 
 if(($browsername=="chrome" || $browsername=="firefox")  && $is_mac) {
-	$font_file="myanmar3";
-	$font_family="Myanmar3";
+
+	if($font_file!="iMon" && $font_file!="UniMon") {
+		$font_file="myanmar3";
+		$font_family="Myanmar3";	
+	}
+	
 }
 
 //check and forece Masterpiece if OS is apple related
