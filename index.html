@@ -18,7 +18,10 @@
         <link rel="stylesheet" href="./fonts/?font=mymyanmar" type="text/css" media="screen" title="yunghkio" charset="utf-8">
 
         <link rel="stylesheet" href="./fonts/?font=zawgyi" type="text/css" media="screen" title="yunghkio" charset="utf-8">
+
+        <link rel="stylesheet" href="./fonts/?font=imon" type="text/css" media="screen" title="yunghkio" charset="utf-8">
         
+        <link rel="stylesheet" href="./fonts/?font=unimon" type="text/css" media="screen" title="yunghkio" charset="utf-8">
         <script src="./js/prettify.js"></script>
         <script src="./js/jquery.js"></script>
         
@@ -154,6 +157,8 @@
                         <option value="padauk">Padauk</option>
                         <option value="mymyanmar">MyMyanmar</option>
                         <option value="zawgyi">Zawgyi-One</option>
+                        <option value="imon">iMon</option>
+                        <option value="unimon">Uni Mon</option>
                         </select>
                     </form>
                     </div>
@@ -283,6 +288,12 @@
           }
           else if($(this).val()=="zawgyi") {
               font_family="Zawgyi-One"
+          }
+          else if($(this).val()=="imon") {
+              font_family="iMon"
+          }
+          else if($(this).val()=="unimon") {
+              font_family="'Uni Mon'"
           }
           
           $("#fontfamily").html("font-family:"+font_family+";");
