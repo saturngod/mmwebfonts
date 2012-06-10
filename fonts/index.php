@@ -120,7 +120,7 @@ if($browsername=="android" && $font_file!='zawgyi') {
 }
 
 //zawgyi font support all browser
-if($font_file=='zawgyi') {
+if(isset($_GET['font']) && $_GET['font']=='zawgyi') {
 	$font_family="Zawgyi-One";
 	$font_file="zawgyi";
 	if($browsername=="ie")
