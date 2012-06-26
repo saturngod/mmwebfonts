@@ -27,7 +27,7 @@
         <script src="./js/jquery.js"></script>
         <script src="bootstrap.js"></script>
 	</head>
-	<body onload="prettyPrint();">
+	<body>
 	    <!-- <div class="topbar">
             <div class="fill">
                 <div class="container">
@@ -47,7 +47,7 @@
         <div id="navbarTop" class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -124,7 +124,7 @@
                 <div class="span5 columns">
                   <h3>The Problem</h3>
                   <p>MMWebFonts can't support on Opera and Android. Opera supported font embed but it can't render myanmar unicode font rendering when font embed. Android still have a problem with myanmar unicode.</p>
-                  <ul style="list-style:none">
+                  <ul style="list-style:none;">
                     <li>x Opera</li>
                     <li>x Android</li>
                   </ul>
@@ -141,10 +141,10 @@
               <div class="row">
                 <div class="span4 columns">
                     <h2>Supported Font</h2>
-                    <p>MMWebFonts support following font list.
+                    <p>MMWebFonts support following font list.</p>
                     <ul>
                         <li>Myanmar3 from (<a href="http://myanmarnlp.org.mm/">Myanmar NLP</a>)</li>
-                        <li>Masterpiece Uni Sans (only on Mac) from (<a href="http://prahita-tmhtet.blogspot.com/2010/07/masterpiece-uni-sans-for-mac-os-x.html">prahita-tmhtet</a>)
+                        <li>Masterpiece Uni Sans (only on Mac) from (<a href="http://prahita-tmhtet.blogspot.com/2010/07/masterpiece-uni-sans-for-mac-os-x.html">prahita-tmhtet</a>)</li>
                         <li>Yunghkio from (<a href="http://www.yunghkio.com/unicode">Sai Di</a>)</li>
                         <li>MyMyanmar from (<a href="http://www.mymyanmar.net">MyMyanmar</a>)</li>
                         <li>Padauk from (<a href="http://www.thanlwinsoft.org/ThanLwinSoft/MyanmarUnicode/Fonts/Padauk.php">thanlwinsoft</a>)</li>
@@ -271,75 +271,10 @@
                 </div>
               </div>
             </div>
+        
+        
+        <script src="custom.js"></script>
 	</body>
 	
-	<script>
-	$(document).ready(function(){
-	    
-	    //init
-
-      $('#navbarTop').scrollspy();
-
-	    $("#codeImport").hide();
-	    
-        // $(".menu_click").click(function(){
-           
-        //    $(".menu_click").removeClass('active');
-        //    $(this).addClass('active');
-            
-        // });
-	   $(".tabs_code").click(function(){
-	      $(".tabs_code").removeClass('active');
-	      $(this).addClass('active');
-	      
-	      console.log($(this).attr('id'));
-	      
-	      if($(this).attr('id')=="standard_click") {
-	          $("#codeNormal").show();
-	          $("#codeImport").hide();
-	      }
-	      else {
-	          $("#codeNormal").hide();
-  	          $("#codeImport").show();
-	      }
-	      return false;
-	   });
-	   
-	   $(".fontselect").change(function(){
-	      
-	      $("#codeNormal").html("&lt;link href='http://mmwebfonts.comquas.com/fonts/?font="+$(this).val()+"' rel='stylesheet' type='text/css'/&gt;");
-	      $("#codeImport").html("@import url('http://mmwebfonts.comquas.com/fonts/?font="+$(this).val()+"');");
-	      
-	      font_family="";
-	      if($(this).val()=="myanmar3") {
-	          font_family="Myanmar3,Yunghkio,'Masterpiece Uni Sans'";
-	      }
-        else if($(this).val()=="masterpiece") {
-            font_family="'Masterpiece Uni Sans',Yunghkio,Myanmar3";
-        }
-	      else if($(this).val()=="yunghkio") {
-	          font_family="Yunghkio,Myanmar3,'Masterpiece Uni Sans'";
-          }
-          else if($(this).val()=="padauk") {
-              font_family="padauk,Yunghkio,Myanmar3,'Masterpiece Uni Sans'";
-          }
-          else if($(this).val()=="mymyanmar") {
-                font_family="'MyMyanmar Universal',Myanmar3,Yunghkio,'Masterpiece Uni Sans'";
-          }
-          else if($(this).val()=="zawgyi") {
-              font_family="Zawgyi-One"
-          }
-          else if($(this).val()=="imon") {
-              font_family="iMon"
-          }
-          else if($(this).val()=="unimon") {
-              font_family="'Uni Mon'"
-          }
-          
-          $("#fontfamily").html("font-family:"+font_family+";");
-           
-	      prettyPrint();
-	   });
-	});
-    </script>
+	
 </html>
