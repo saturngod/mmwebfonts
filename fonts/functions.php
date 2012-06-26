@@ -25,6 +25,11 @@ function get_browser_name() {
 	}
 	else if(preg_match("/iPad/",$user_agent))
 	{
+        if(preg_match("/iPad; U;/",$user_agent))
+        {
+            return "android";
+        }
+        
 		return "iPad";
 	}
 	else if(preg_match("/Android/",$user_agent))

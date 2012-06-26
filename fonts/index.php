@@ -81,8 +81,10 @@ else if($font_file=='zawgyi') {
 }
 
 $browsername = get_browser_name();
+
 $font_type = "ttf";
 $is_mac = mac_os();
+
 
 if($browsername=="ie")
 {
@@ -108,7 +110,7 @@ if(!is_force_font($font_file))
 		$font_file="yunghkio";
 		$font_type="ttf";
 	}
-	if($is_mac && $font_file !="masterpiece") {
+	if($is_mac && $font_file !="masterpiece" && $browsername !="android") {
 		$font_family="Masterpiece Uni Sans";
 		$font_file="masterpiece";
 		$font_type="ttf";
