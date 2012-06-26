@@ -3,7 +3,7 @@
 	<head>
 	    <meta charset="UTF8"/>
 		<title>MMWebFonts</title>
-		<link rel="stylesheet" href="./stylesheets/bootstrap-1.1.0.min.css">
+		<link rel="stylesheet" href="./stylesheets/bootstrap.min.css">
 		<link rel="stylesheet" href="./stylesheets/style.css">
         <link rel="stylesheet" href="./stylesheets/prettify.css">
 
@@ -11,23 +11,24 @@
 
         <link rel="stylesheet" href="./fonts/?font=masterpiece" type="text/css" media="screen" title="masterpiece" charset="utf-8">
 
-        <link rel="stylesheet" href="./fonts/?font=myanmar3" type="text/css" media="screen" title="yunghkio" charset="utf-8">
+        <link rel="stylesheet" href="./fonts/?font=myanmar3" type="text/css" media="screen" title="myanmar3" charset="utf-8">
 
-        <link rel="stylesheet" href="./fonts/?font=padauk" type="text/css" media="screen" title="yunghkio" charset="utf-8">
+        <link rel="stylesheet" href="./fonts/?font=padauk" type="text/css" media="screen" title="padauk" charset="utf-8">
 
-        <link rel="stylesheet" href="./fonts/?font=mymyanmar" type="text/css" media="screen" title="yunghkio" charset="utf-8">
+        <link rel="stylesheet" href="./fonts/?font=mymyanmar" type="text/css" media="screen" title="mymyanmar" charset="utf-8">
 
-        <link rel="stylesheet" href="./fonts/?font=zawgyi" type="text/css" media="screen" title="yunghkio" charset="utf-8">
+        <link rel="stylesheet" href="./fonts/?font=zawgyi" type="text/css" media="screen" title="zawgyi" charset="utf-8">
 
-        <link rel="stylesheet" href="./fonts/?font=imon" type="text/css" media="screen" title="yunghkio" charset="utf-8">
+        <link rel="stylesheet" href="./fonts/?font=imon" type="text/css" media="screen" title="imon" charset="utf-8">
         
-        <link rel="stylesheet" href="./fonts/?font=unimon" type="text/css" media="screen" title="yunghkio" charset="utf-8">
+        <link rel="stylesheet" href="./fonts/?font=unimon" type="text/css" media="screen" title="unimon" charset="utf-8">
+
         <script src="./js/prettify.js"></script>
         <script src="./js/jquery.js"></script>
-        
+        <script src="bootstrap.js"></script>
 	</head>
 	<body onload="prettyPrint();">
-	    <div class="topbar">
+	    <!-- <div class="topbar">
             <div class="fill">
                 <div class="container">
                   <h3><a href="#">MMWebFonts</a></h3>
@@ -41,8 +42,44 @@
                   </ul>
                 </div>
             </div>
-        </div>
+        </div> -->
         
+        <div id="navbarTop" class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <button type="button"class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="brand" href="./index.html">MMWebFonts</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="">
+                <a href="#masthead">Overview</a>
+              </li>
+              <li class="">
+                <a href="#about">About</a>
+              </li>
+              <li class="">
+                <a href="#supported">Supported Font</a>
+              </li>
+              <li class="">
+                <a href="#how-to-use">How to use</a>
+              </li>
+              <li class="">
+                <a href="#plugins">Plugins</a>
+              </li>
+              <li class="divider-vertical"></li>
+              <li class="">
+                <a href="https://github.com/saturngod/mmwebfonts" target="_blank">Sourcecode At Github</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
         <!-- Masthead (blueprinty thing)
         ================================================== -->
         <div id="masthead">
@@ -57,7 +94,7 @@
           </div>
         </div>
             
-	    <div class="container">
+	    <div class="container" data-spy="scroll" data-target="#navbarTop" data-offset="0">
 	        
 	        <!-- About Section
 	        ============================== -->
@@ -115,7 +152,7 @@
                     </ul>
                     <p>If your font is using OFL license and want to embed on MMWebFonts , <a href="mailto:saturngod@gmail.com">contact me</a></p>
                 </div>
-                <div class="span12 columns">
+                <div class="span8 columns">
                     <h3>Font Face</h3>
                     <br/>
                     <p><strong>Myanmar3</strong> (<a href="http://myanmarnlp.org.mm/">Myanmar NLP</a>)</p>
@@ -163,9 +200,9 @@
                     </form>
                     </div>
                 </div>
-                <div class="span12 columns">
+                <div class="span8 columns">
                     <h3>Codes</h3>
-                    <ul class="tabs">
+                    <ul class="nav nav-tabs">
                             <li class="active tabs_code" id="standard_click"><a href="#">Standard</a></li>
                             <li class="tabs_code" id="import_click"><a href="#">@import</a></li>
                     </ul>
@@ -188,7 +225,7 @@
             <h1>Plugins <small>ready made plugin that use MMWebFonts</small></h1>
           </div>
           <div class="row">
-            <div class="span4 columns">
+            <div class="span3 columns">
                 <h2>List</h2>
                 MMWebFonts have following plugins
                 <ul>
@@ -198,7 +235,7 @@
                     <li>Vanilla 2</li>
                 </ul>
             </div>
-            <div class="span12 columns">
+            <div class="span9 columns">
                 <h3>About Plugins</h3>
                 <h4><a href="http://wordpress.org/extend/plugins/mmunicode-embed/">Wordpress (Saturngod)</a></h4>
                 <p>This plugin will add MMWebFonts link at the header of the wordpress site. You can choose font family in the admin panel.</p>
@@ -240,14 +277,17 @@
 	$(document).ready(function(){
 	    
 	    //init
+
+      $('#navbarTop').scrollspy();
+
 	    $("#codeImport").hide();
 	    
-        $(".menu_click").click(function(){
+        // $(".menu_click").click(function(){
            
-           $(".menu_click").removeClass('active');
-           $(this).addClass('active');
+        //    $(".menu_click").removeClass('active');
+        //    $(this).addClass('active');
             
-        });
+        // });
 	   $(".tabs_code").click(function(){
 	      $(".tabs_code").removeClass('active');
 	      $(this).addClass('active');

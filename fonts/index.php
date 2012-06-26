@@ -75,6 +75,10 @@ else if($font_file=='imon') {
 	$font_file='iMon';
 	$font_family='iMon';
 }
+else if($font_file=='zawgyi') {
+	$font_family="Zawgyi-One";
+	$font_file="zawgyi";
+}
 
 $browsername = get_browser_name();
 $font_type = "ttf";
@@ -85,53 +89,40 @@ if($browsername=="ie")
 	$font_type = "eot";
 }
 
-if(($browsername=="chrome" || $browsername=="firefox")  && $is_mac) {
+if(!is_force_font($font_file))
+{
+	// if(($browsername=="chrome" || $browsername=="firefox")  && $is_mac) {
+	// 		$font_file="myanmar3";
+	// 		$font_family="Myanmar3";
+	// }
 
-	if($font_file!="iMon" && $font_file!="UniMon") {
-		$font_file="myanmar3";
-		$font_family="Myanmar3";	
+	//check and forece Masterpiece if OS is apple related
+	if($browsername=='iPhone' or $browsername=='iPad') {
+		$font_family="Masterpiece Uni Sans";
+	    $font_file="masterpiece";
+	    $font_type="ttf";
 	}
-	
-}
 
-//check and forece Masterpiece if OS is apple related
-if($browsername=='iPhone' or $browsername=='iPad' and $font_file!='myanmar3') {
-	$font_family="Masterpiece Uni Sans";
-    $font_file="masterpiece";
-    $font_type="ttf";
-}
-
-if(!$is_mac && $font_file =="masterpiece") {
-	$font_family="Yunghkio";
-	$font_file="yunghkio";
-	$font_type="ttf";
-}
-if($is_mac && ($font_file=="padauk" || $font_file=="yunghkio")) {
-	$font_family="Masterpiece Uni Sans";
-	$font_file="masterpiece";
-	$font_type="ttf";
-}
-
-//for android unicode, masterpiece is better
-if($browsername=="android" && $font_file!='zawgyi') {
-	$font_family="Masterpiece Uni Sans";
-	$font_file="masterpiece";
-	$font_type="ttf";
-}
-
-//zawgyi font support all browser
-if(isset($_GET['font']) && $_GET['font']=='zawgyi') {
-	$font_family="Zawgyi-One";
-	$font_file="zawgyi";
-	if($browsername=="ie")
-	{
-		//IE mobile still not support font embed
-		$font_type="eot";
-	}
-	else {
+	if(!$is_mac && $font_file =="masterpiece") {
+		$font_family="Yunghkio";
+		$font_file="yunghkio";
 		$font_type="ttf";
 	}
+	if($is_mac && $font_file !="masterpiece") {
+		$font_family="Masterpiece Uni Sans";
+		$font_file="masterpiece";
+		$font_type="ttf";
+	}
+
+	//for android unicode, masterpiece is better
+	// remove to check android because firefox may support unicode
+	// if($browsername=="android" && $font_file!='zawgyi') {
+	// 	$font_family="Masterpiece Uni Sans";
+	// 	$font_file="masterpiece";
+	// 	$font_type="ttf";
+	// }
 }
+
 
 if($font_type!="")
 {
@@ -141,20 +132,34 @@ if($font_type!="")
 		$tracker->trackEvent($event,$session,$visitor);
 	}
 
-	$css ="@font-face {\nfont-family:".$font_family.";";
+	$css ="@font-face {\nfont-family:'".$font_family."';";
 
 	$font_path=$current_url.$font_file.".".$font_type;
 
 	if($browsername!="ie") {
+
 		$css=$css."\nsrc:local('".$font_family."'),";
-		$css=$css."url('".$font_path."');\n}";
+		if(($browsername=="chrome" || $browsername=="firefox")  && $is_mac && !is_force_font($font_file)) {
+			$css=$css."url('".$font_path."') format('truetype-aat');\n}";			
+		}
+		else {
+			$css=$css."url('".$font_path."');\n}";
+		}
 	}
 	else {
-		$css=$css."\nsrc:url('".$font_path."?') format('embedded-opentype');";
-        		$css=$css."\n}";
+			$css=$css."\nsrc:url('".$font_path."?') format('embedded-opentype');";
+        	$css=$css."\n}";	
 	}
 
 	header("Access-Control-Allow-Origin: *");
 	header("Content-Type: text/css");
+
+	//add cache for css
+	$seconds_to_cache = 172800;
+	$ts = gmdate("D, d M Y H:i:s", time() + $seconds_to_cache) . " GMT";
+	header("Expires: $ts");
+	header("Pragma: cache");
+	header("Cache-Control: max-age=$seconds_to_cache");
+
 	echo $css;
 }
