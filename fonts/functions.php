@@ -1,4 +1,18 @@
 <?php
+/*
+	check force font or not
+	return bool
+*/
+function is_force_font($font_file)
+{
+	$force_font = array("UniMon","iMon","zawgyi");
+	if(in_array($font_file, $force_font))
+	{
+		return true;
+	}
+	return false;
+}
+
 function get_browser_name() {
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];
 	if(preg_match("/Firefox/",$user_agent))
