@@ -67,14 +67,6 @@ else if($font_file=='unimon') {
 	$font_file="UniMon";
 	$font_family="Uni Mon";
 }
-else if($font_file=='unimon') {
-	$font_file="UniMon";
-	$font_family="Uni Mon";
-}
-else if($font_file=='imon') {
-	$font_file='iMon';
-	$font_family='iMon';
-}
 else if($font_file=='zawgyi') {
 	$font_family="Zawgyi-One";
 	$font_file="zawgyi";
