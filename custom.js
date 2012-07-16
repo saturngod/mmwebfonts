@@ -2,7 +2,6 @@ $(document).ready(function(){
     
     //init
     prettyPrint();
-    $('#navbarTop').scrollspy();
 
     $("#codeImport").hide();
     
