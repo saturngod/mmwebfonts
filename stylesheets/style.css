@@ -73,7 +73,7 @@ padding-top: 60px;
 }
 
 .yunghkio {
-    font-family:Yunghkio,Myanmar3,"Masterpiece Uni Sans";
+    font-family:"Masterpiece Uni Sans",Yunghkio,Myanmar3;
 }
 
 .masterpiece {
@@ -84,7 +84,7 @@ padding-top: 60px;
 }
 
 .padauk {
-    font-family:padauk,Yunghkio,Myanmar3,"Masterpiece Uni Sans";
+    font-family:"Masterpiece Uni Sans",padauk,Yunghkio,Myanmar3;
 }
 
 .mymyanmar {
