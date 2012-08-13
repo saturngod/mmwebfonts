@@ -5,7 +5,7 @@
 */
 function is_force_font($font_file)
 {
-	$force_font = array("UniMon","iMon","zawgyi");
+	$force_font = array("UniMon","iMon","zawgyi","mon3");
 	if(in_array($font_file, $force_font))
 	{
 		return true;

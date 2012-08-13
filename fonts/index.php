@@ -71,6 +71,10 @@ else if($font_file=='zawgyi') {
 	$font_family="Zawgyi-One";
 	$font_file="zawgyi";
 }
+else if($font_file=="mon3") {
+	$font_file = "mon3";
+	$font_family = "MON3 Anonta 1";
+}
 
 $browsername = get_browser_name();
 
@@ -108,6 +112,9 @@ if(!is_force_font($font_file))
 		$font_type="ttf";
 	}
 
+	/**
+	* comment it because firefox support font embed in android
+	**/
 	//for android unicode, masterpiece is better
 	// remove to check android because firefox may support unicode
 	// if($browsername=="android" && $font_file!='zawgyi') {
