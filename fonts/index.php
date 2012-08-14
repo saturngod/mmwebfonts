@@ -161,6 +161,7 @@ if($font_type!="")
 	header("Expires: $ts");
 	header("Pragma: cache");
 	header("Cache-Control: max-age=$seconds_to_cache");
+	header("Content-type: text/css");
 
 	echo $css;
 }
