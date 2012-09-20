@@ -1,3 +1,4 @@
+
 #masthead, #footer {
   background-color: #049cd9;
   background-repeat: no-repeat;
@@ -80,11 +81,15 @@ padding-top: 60px;
   font-family:"Masterpiece Uni Sans",Yunghkio,Myanmar3; 
 }
 .zawgyi {
-    font-family:Zawgyi-One;
+    font-family:'Zawgyi-One';
 }
 
 .padauk {
     font-family:"Masterpiece Uni Sans",padauk,Yunghkio,Myanmar3;
+}
+
+.monanonta {
+   font-family:"MON3 Anonta 1"; 
 }
 
 .mymyanmar {

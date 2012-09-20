@@ -30,7 +30,7 @@ $(document).ready(function(){
    
    $(".fontselect").change(function(){
       
-      $("#codeNormal").html("&lt;link href='http://mmwebfonts.comquas.com/fonts/?font="+$(this).val()+"' rel='stylesheet' type='text/css'/&gt;");
+      $("#codeNormal").html("&lt;link href='http://mmwebfonts.comquas.com/fonts/?font="+$(this).val()+"' /&gt;");
       $("#codeImport").html("@import url('http://mmwebfonts.comquas.com/fonts/?font="+$(this).val()+"');");
       
       font_family="";
@@ -50,13 +50,17 @@ $(document).ready(function(){
             font_family="'MyMyanmar Universal',Myanmar3,Yunghkio,'Masterpiece Uni Sans'";
       }
       else if($(this).val()=="zawgyi") {
-          font_family="Zawgyi-One"
+          font_family="Zawgyi-One";
       }
       else if($(this).val()=="imon") {
-          font_family="iMon"
+          font_family="iMon";
       }
       else if($(this).val()=="unimon") {
-          font_family="'Uni Mon'"
+          font_family="'Uni Mon'";
+      }
+      else if($(this).val()=="mon3")
+      {
+        font_family = "'MON3 Anonta 1'";
       }
       
       $("#fontfamily").html("font-family:"+font_family+";");
