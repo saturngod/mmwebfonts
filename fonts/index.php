@@ -51,15 +51,15 @@ else if($font_file=="masterpiece") {
 	$font_file="masterpiece";
     $font_family="Masterpiece Uni Sans";
 }
-else if($font_file==='myanmar3') {
+else if($font_file=='myanmar3') {
 	$font_file="myanmar3";
     $font_family="Myanmar3";
 }
-else if($font_file==='padauk') {
+else if($font_file=='padauk') {
 	$font_file="padauk";
     $font_family="Padauk";
 }   
-else if($font_file==='mymyanmar') {
+else if($font_file=='mymyanmar') {
 	$font_file="MyMMUnicodeUniversal";
     $font_family="MyMyanmar Universal";
 }
@@ -129,7 +129,7 @@ if(!is_force_font($font_file))
 }
 
 //check for android webkit because android 4.2 or later only support svg	
-if($is_android && $is_webkit && $font_file =="zawgyi")
+if($is_android && $is_webkit && ($font_file =="zawgyi"))
 {
 	$font_type="svg";
 }
@@ -151,6 +151,11 @@ if($font_type!="")
 		$css=$css."\nsrc:local('".$font_family."'),";
 		if(($browsername=="chrome" || $browsername=="firefox")  && $is_mac && !is_force_font($font_file)) {
 			$css=$css."url('".$font_path."') format('truetype-aat');\n}";			
+		}
+		else if($font_type=="svg")
+		{
+			//svg need to put format to show correctly
+			$css=$css."url('".$font_path."') format('svg');\n}";	
 		}
 		else {
 			$css=$css."url('".$font_path."');\n}";
