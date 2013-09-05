@@ -67,6 +67,26 @@ function mac_os() {
 	return false;
 }
 
+function android_os()
+{
+	$user_agent = $_SERVER['HTTP_USER_AGENT'];
+	if(preg_match("/Android/",$user_agent))
+	{
+		return true;
+	}
+	return false;
+}
+
+function webKit_browser()
+{
+	$user_agent = $_SERVER['HTTP_USER_AGENT'];
+	if(preg_match("/WebKit/",$user_agent))
+	{
+		return true;
+	}
+	return false;
+}
+
 function currentPageURL() {
  $pageURL = 'http';
  if (isset($_SERVER["HTTPS"]) && $_SERVER["HTTPS"] == "on") {$pageURL .= "s";}

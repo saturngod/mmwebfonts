@@ -81,6 +81,8 @@ $browsername = get_browser_name();
 $font_type = "ttf";
 $is_mac = mac_os();
 
+$is_android = android_os();
+$is_webkit = webKit_browser();
 
 if($browsername=="ie")
 {
@@ -123,8 +125,14 @@ if(!is_force_font($font_file))
 	// 	$font_file="masterpiece";
 	// 	$font_type="ttf";
 	// }
+
 }
 
+//check for android webkit because android 4.2 or later only support svg	
+if($is_android && $is_webkit && $font_file =="zawgyi")
+{
+	$font_type="svg";
+}
 
 if($font_type!="")
 {
