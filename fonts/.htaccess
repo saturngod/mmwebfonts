@@ -4,3 +4,6 @@
     Header set Expires "Thu, 15 Apr 2020 20:00:00 GMT"
   </IfModule>
 </FilesMatch>
+
+RewriteEngine On
+RewriteRule ^/?font=(.*)$ /index.php?font=$1 [L]

@@ -49,7 +49,7 @@ if($font_file=='yunghkio') {
 }
 else if($font_file=="masterpiece") {
 	$font_file="masterpiece";
-    $font_family="Master Piece Uni Sans";
+    $font_family="Masterpiece Uni Sans";
 }
 else if($font_file==='myanmar3') {
 	$font_file="myanmar3";
@@ -95,18 +95,19 @@ if(!is_force_font($font_file))
 	// }
 
 	//check and forece Masterpiece if OS is apple related
-	if($browsername=='iPhone' or $browsername=='iPad') {
+	if($browsername=='iPhone' or $browsername=='iPad' ) {
 		$font_family="Masterpiece Uni Sans";
 	    $font_file="masterpiece";
 	    $font_type="ttf";
 	}
 
 	if(!$is_mac && $font_file =="masterpiece") {
-		$font_family="Yunghkio";
-		$font_file="yunghkio";
+		$font_family="MON3 Anonta 1";
+		$font_file="mon3";
 		$font_type="ttf";
 	}
-	if($is_mac && $font_file !="masterpiece" && $browsername !="android") {
+	
+	if($is_mac && $font_file !="masterpiece") {
 		$font_family="Masterpiece Uni Sans";
 		$font_file="masterpiece";
 		$font_type="ttf";

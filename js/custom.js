@@ -30,7 +30,7 @@ $(document).ready(function(){
    
    $(".fontselect").change(function(){
       
-      $("#codeNormal").html("&lt;link href='http://mmwebfonts.comquas.com/fonts/?font="+$(this).val()+"' /&gt;");
+      $("#codeNormal").html("&lt;link rel=\"stylesheet\" href='http://mmwebfonts.comquas.com/fonts/?font="+$(this).val()+"' /&gt;");
       $("#codeImport").html("@import url('http://mmwebfonts.comquas.com/fonts/?font="+$(this).val()+"');");
       
       font_family="";

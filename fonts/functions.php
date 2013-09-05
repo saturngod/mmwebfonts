@@ -5,7 +5,7 @@
 */
 function is_force_font($font_file)
 {
-	$force_font = array("unimon","imon","zawgyi","mon3","myanmar3");
+	$force_font = array("unimon","imon","zawgyi","mon3","myanmar3","mymmunicodeuniversal");
 	if(in_array(strtolower($font_file), $force_font))
 	{
 		return true;
@@ -60,7 +60,7 @@ function get_browser_name() {
 
 function mac_os() {
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];
-	if(preg_match("/Mac/",$user_agent))
+	if(preg_match("/Macintosh/",$user_agent))
 	{
 		return true;
 	}
