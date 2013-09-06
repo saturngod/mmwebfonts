@@ -14,6 +14,10 @@ $(document).ready(function(){
 
       $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
     }
+
+    $('[data-spy="scroll"]').each(function () {
+      var $spy = $(this).scrollspy('refresh')
+    });
     //init
     generateHighlight();
 
