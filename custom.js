@@ -59,6 +59,10 @@ $(document).ready(function(){
       
       $("#fontfamily").html("font-family:"+font_family+";");
        
-      prettyPrint();
+      !function ($) {
+        $(function(){
+          window.prettyPrint && prettyPrint()   
+        })
+      }(window.jQuery);
    });
 });
