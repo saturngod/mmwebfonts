@@ -5,12 +5,6 @@ $(document).ready(function(){
 
     $("#codeImport").hide();
     
-    // $(".menu_click").click(function(){
-       
-    //    $(".menu_click").removeClass('active');
-    //    $(this).addClass('active');
-        
-    // });
    $(".tabs_code").click(function(){
       $(".tabs_code").removeClass('active');
       $(this).addClass('active');

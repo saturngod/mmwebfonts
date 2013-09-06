@@ -6,7 +6,6 @@ $php_version =(float)phpversion();
 
 date_default_timezone_set('Asia/Singapore');
 require_once('functions.php');
-require_once('../config.php');
 
 //start page
 $current_url=substr(currentPageURL(),0,-9);
