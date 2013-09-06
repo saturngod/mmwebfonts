@@ -1,266 +1,236 @@
 <!DOCTYPE HTML>
 <html>
-<head>
- <meta charset="UTF8"/>
- <title>MMWebFonts</title>
- <link rel="stylesheet" href="./stylesheets/bootstrap.min.css">
- <link rel="stylesheet" href="./stylesheets/extra.css">
- <link rel="stylesheet" href="./stylesheets/prettify.css">
+  <head>
+      <meta charset="UTF8"/>
+      <title>MMWebFonts</title>
+      <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="./stylesheets/extra.css" rel="stylesheet">
+      <link rel="stylesheet" href="./stylesheets/style.css" rel="stylesheet">
+      <link rel="stylesheet" href="./stylesheets/prettify.css" rel="stylesheet">
 
- <link rel="stylesheet" href="./fonts/?font=yunghkio">
+      <!-- Fonts -->
+      <link rel="stylesheet" href="./fonts/?font=yunghkio">
+      <link rel="stylesheet" href="./fonts/?font=masterpiece">
+      <link rel="stylesheet" href="./fonts/?font=myanmar3">
+      <link rel="stylesheet" href="./fonts/?font=padauk">
+      <link rel="stylesheet" href="./fonts/?font=mymyanmar">
+      <link rel="stylesheet" href="./fonts/?font=zawgyi">
+      <link rel="stylesheet" href="./fonts/?font=unimon">
+      <link rel="stylesheet" href="./fonts/?font=mon3">
 
- <link rel="stylesheet" href="./fonts/?font=masterpiece">
+      <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
 
- <link rel="stylesheet" href="./fonts/?font=myanmar3">
+  </head>
+  <body data-spy="scroll" data-target="#navbarTop">
 
- <link rel="stylesheet" href="./fonts/?font=padauk">
+  <!-- Github ribbon -->
+  <a href="https://github.com/saturngod/MMWebFonts"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 1031" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+  
+  <!-- Nav bar start -->
+  <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
+  <div class="container">
 
- <link rel="stylesheet" href="./fonts/?font=mymyanmar">
-
- <link rel="stylesheet" href="./fonts/?font=zawgyi">
-
- <link rel="stylesheet" href="./fonts/?font=unimon">
- 
-  <link rel="stylesheet" href="./fonts/?font=mon3">
-
- <script src="./js/prettify.js"></script>
- <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
- <script src="./js/bootstrap.js"></script>
-</head>
-<body data-spy="scroll" data-target="#navbarTop">
-  <div id="navbarTop" class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
-      <div class="container">
-        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="brand" href="./index.html">MMWebFonts</a>
-        <div class="nav-collapse collapse">
-          <ul class="nav">
-            <li class="active">
-              <a href="#masthead">Overview</a>
-            </li>
-            <li class="">
-              <a href="#about">About</a>
-            </li>
-            <li class="">
-              <a href="#supported">Supported Font</a>
-            </li>
-            <li class="">
-              <a href="#how-to-use">How to use</a>
-            </li>
-            <li class="">
-              <a href="#plugins">Plugins</a>
-            </li>
-            <li class="divider-vertical"></li>
-            <li class="">
-              <a href="https://github.com/saturngod/mmwebfonts" target="_blank">Sourcecode At Github</a>
-            </li>
+    <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+      <ul class="nav navbar-nav">
+        <a class="navbar-brand" href="#">MMWebFonts</a>
+          <ul class="nav navbar-nav">
+            <li class="active menu_click"><a href="#masthead">Overview</a></li>
+            <li class="menu_click"><a href="#about">About</a></li>
+            <li class="menu_click"><a href="#supported">Supported Font</a></li>
+            <li class="menu_click"><a href="#how-to-use">How to use</a></li>
+            <li class="menu_click"><a href="#plugins">Plugins</a></li>
           </ul>
-        </div>
-      </div>
+      </ul>
+    </nav>
+  </div>
+  </header>
+    <!-- Nav bar end -->
+
+  <!-- Masthead (blueprinty thing)
+  ================================================== -->
+  <div id="masthead">
+    <div class="inner">
+      <div class="container">
+        <h1>MMWebFonts</h1>
+        <p class="lead">
+            MMWebFonts is a collection of Myanmar web safe unicode fonts. It is easy and quick to use for everyone with a line of code. It supports for <strong>Windows, Linux, Mac OSX and iOS 4.0 or later</strong>.
+        </p>
+        <p>Just add css external link url in your website. MMWebFonts is a opensource and you can fork on <a href="https://github.com/saturngod/MMWebFonts">github</a>.</p>
+      </div> <!-- /container -->
     </div>
   </div>
 
-        <!-- Masthead (blueprinty thing)
-        ================================================== -->
-
-
-          <div id="masthead">
-            <div class="inner">
-              <div class="container">
-                <h1>MMWebFonts</h1>
-                <p class="lead">
-                  MMWebFonts is a collection of Myanmar web safe unicode fonts. It is easy and quick to use for everyone with a line of code. It supports for <strong>Windows, Linux, Mac OSX and iOS 4.0 or later</strong>.
-                </p>
-                <p>Just add css external link url in your website. MMWebFonts is a opensource and you can fork on <a href="https://github.com/saturngod/mmwebfonts">github</a>.</p>
-              </div> <!-- /container -->
-            </div>
-          </div>
-
-          <div class="container" >
-            <section id="about">
-              <div class="page-header">
-                <h1>About MMWebFonts <small>Brief history, browser support, and more</small></h1>
-              </div>
-              <div class="row">
-                <div class="span6 columns">
-                  <h3>History</h3>
-                  <p>Around March 2011 , Myanmar Unicode were ready and blowing up for the blog. However, most of the blogger face the problem with font embed. Most of the cyber cafe didn't install the unicode font. Myanmar 3 is not universal font at this time. For Mac and iOS , we need to use Masterpiece Uni Sans.</p>
-                  <p>Some of the bloggers wanted to change the unicode. However, they don't know about the font embed technology. So, I created the MMWebFonts for all of the myanmar unicode websites. Now, MMWebFonts has <strong>0.7 requested per second</strong> in everyday.</p>
-                  <p>Read more on <a href="http://www.saturngod.net/knowledgebase/myanmar-web-font">saturngod.net ›</a></p>
-                </div>
-
-                <div class="span5 columns">
-                  <h3>Browser support</h3>
-                  <p>MMWebFonts is tested and supported in major modern browsers like Chrome, Safari, iOS, Internet Explorer, and Firefox.</p>
-                  <ul style="list-style:none;">
-                    <li><i class="icon-ok"></i> Chrome 10.0 or later</li>
-                    <li><i class="icon-ok"></i> Safari 5.0 or later</li>
-                    <li><i class="icon-ok"></i> Firefox 4.0 or later</li>
-					<li><i class="icon-ok"></i> Android Firefox 17 or later</li>
-                    <li><i class="icon-ok"></i> iOS 4.0 or later</li>
-                  </ul>
-                </div>
-
-                <div class="span5 columns">
-                  <h3>The Problem</h3>
-                  <p>MMWebFonts can't support on Opera and Android. Opera supported font embed but it can't render myanmar unicode font rendering when font embed. Android still have a problem with myanmar unicode.</p>
-                  <ul style="list-style:none;">
-                    <li><i class="icon-remove"></i> Opera</li>
-                    <li><i class="icon-remove"></i> Android Native Browser</li>
-                  </ul>
-                </div>
-
-              </div> <!-- /row -->
-            </section>
-
-
-            <section id="supported">
-              <div class="page-header">
-                <h1>Supported MMWebFonts <small>MMWebFonts supported OFL and font embed allow license font</small></h1>
-              </div>
-              <div class="row">
-                <div class="span4 columns">
-                  <h2>Supported Font</h2>
-                  <p>MMWebFonts support following font list.</p>
-                  <ul>
-                    <li>Myanmar3 from (<a href="http://myanmarnlp.org.mm/">Myanmar NLP</a>)</li>
-                    <li>Masterpiece Uni Sans (only on Mac) from (<a href="http://prahita-tmhtet.blogspot.com/2010/07/masterpiece-uni-sans-for-mac-os-x.html">prahita-tmhtet</a>)</li>
-                    <li>Yunghkio from (<a href="http://www.yunghkio.com/unicode">Sai Di</a>)</li>
-                    <li>MyMyanmar from (<a href="http://www.mymyanmar.net">MyMyanmar</a>)</li>
-                    <li>Padauk from (<a href="http://www.thanlwinsoft.org/ThanLwinSoft/MyanmarUnicode/Fonts/Padauk.php">thanlwinsoft</a>)</li>
-                    <li>Zawgyi from (<a href="http://www.zawgyi.net">Zawgyi Group</a>)</li>
-                    <li>Mon3 Anonta 1 from (<a href="http://code.google.com/p/mon2uni/">mon2uni</a>)</li>
-                  </ul>
-                  <p>If your font is using OFL license and want to embed on MMWebFonts , <a href="mailto:saturngod@gmail.com">contact me</a></p>
-                </div>
-                <div class="span8 columns">
-                  <h3>Font Face</h3>
-                  <br/>
-                  <p><strong>Myanmar3</strong> (<a href="http://myanmarnlp.org.mm/">Myanmar NLP</a>)</p>
-                  <p class="myanmar3">မြန်မာစာသည် တို့စာ။</p>
-                  <br/>
-                  <p><strong>MyMyanmar Universal Font</strong> (<a href="http://www.mymyanmar.net/">MyMyanmar</a>)</p>
-                  <p class="mymyanmar">မြန်မာစာသည် တို့စာ။</p>
-                  <br/>
-
-                  <p><strong>Masterpiece Uni Sans</strong> (<a href="http://prahita-tmhtet.blogspot.com/2010/07/masterpiece-uni-sans-for-mac-os-x.html">Masterpiece Uni Sans</a>)</p>
-                  <p class="masterpiece">မြန်မာစာသည် တို့စာ။</p>
-                  <br/>
-
-                  <p><strong>Yunghkio</strong> (<a href="http://www.yunghkio.com/unicode">Sai Di</a>)</p>
-                  <p class="yunghkio">မြန်မာစာသည် တို့စာ။</p>
-                  <br/>
-                  <p><strong>Padauk</strong> (<a href="http://www.thanlwinsoft.org/ThanLwinSoft/MyanmarUnicode/Fonts/Padauk.php">thanlwinsoft</a>)</p>
-                  <p class="padauk">မြန်မာစာသည် တို့စာ။</p>
-                  <br/>
-                  <p><strong>Zawgyi-One</strong> (<a href="http://www.zawgyi.net">Zawgyi Group</a>)</p>
-                  <p style="font-family:Zawgyi-One">ေဇာ္က ကေနသည္။</p>
-                  <br/>
-                  <p><strong>Mon3 Anonta 1</strong> (<a href="http://code.google.com/p/mon2uni/">mon2uni</a>)
-                    <p class="monanonta">တိ ပိုဲမန်ကၠာ ညံၚ်ပမာထဝ်သြန် ဂွံပတုဲကေၚ်ကာ တိဗ္ၚမန် ပ္ဍဲဇၟန်ဒွက် </p>
-                </div>
-              </div><!-- /row -->
-            </section>
-
-            <section id="how-to-use">
-              <div class="page-header">
-                <h1>How to use <small>add external stylesheet in your header and change font family</small></h1>
-              </div>
-              <div class="row">
-                <div class="span4 columns">
-                  <h2>Choose Font</h2>
-                  <div class="input">
-                    <form>
-                      <select class="fontselect">
-                        <option selected="selected" value="myanmar3">Myanmar3</option>
-                        <option value="yunghkio">Yunghkio</option>
-                        <option value="masterpiece">Masterpiece Uni Sans</option>
-                        <option value="padauk">Padauk</option>
-                        <option value="mymyanmar">MyMyanmar</option>
-                        <option value="zawgyi">Zawgyi-One</option>
-                        <option value="unimon">Uni Mon</option>
-                        <option value="mon3">MON3 Anonta 1</option>
-                      </select>
-                    </form>
-                  </div>
-                </div>
-                <div class="span8 columns">
-                  <h3>Codes</h3>
-                  <ul class="nav nav-tabs">
-                    <li class="active tabs_code" id="standard_click"><a href="#">Standard</a></li>
-                    <li class="tabs_code" id="import_click"><a href="#">@import</a></li>
-                  </ul>
-
-                  <pre class="prettyprint linenums" id="codeNormal">&lt;link rel="stylesheet" href='http://mmwebfonts.comquas.com/fonts/?font=myanmar3' /&gt;</pre>
-                  <pre class="prettyprint linenums" id="codeImport">@import url('http://mmwebfonts.comquas.com/fonts/?font=myanmar3');</pre>
-
-                  <h3>Font Family</h3>
-                  <p>Add following code in stylesheet font family.</p>
-                  <pre class="prettyprint linenums" id="fontfamily">font-family:Myanmar3,Yunghkio;</pre>
-
-                </div><!--/span8 columns -->
-
-              </div> <!-- /row -->
-            </section>
-
-            <section id="plugins">
-              <div class="page-header">
-                <h1>Plugins <small>ready made plugin that use MMWebFonts</small></h1>
-              </div>
-              <div class="row">
-                <div class="span3 columns">
-                  <h2>List</h2>
-                  MMWebFonts have following plugins
-                  <ul>
-                    <li>Wordpress</li>
-                    <li>Joomla</li>
-                    <li>Drupal</li>
-                    <li>Vanilla 2</li>
-                  </ul>
-                </div>
-                <div class="span9 columns">
-                  <h3>About Plugins</h3>
-                  <h4><a href="http://wordpress.org/extend/plugins/mmunicode-embed/">Wordpress (Saturngod)</a></h4>
-                  <p>This plugin will add MMWebFonts link at the header of the wordpress site. You can choose font family in the admin panel.</p>
-                  
-                  <h4><a href="http://www.zack-notes.net/joomzack15/joomla-cms/joomla-1-5-yunghkio-unicode-webfont-plugin.html">Joomla Unicode (Zack)</a></h4>
-                  <p>This plugin will add MMWebFonts link at the header of the joomla site. This plugin only support Yunghkio now.</p>
-
-
-                  <h4><a href="http://www.zack-notes.net/joomzack15/joomla-cms/joomla-1-5-zawgyi-webfont-plugin.html">Joomla Zawgyi (Zack)</a></h4>
-                  <p>This plugin will add MMWebFonts zawgyi link at the header of the joomla site.</p>
-
-                  <h4><a href="http://goo.gl/mqC7G">Drupal 7 (Everleaner)</a></h4>
-                  <p>is plugin is only work at Drupal 7.</p>
-
-                  <h4><a href="http://www.myanmarlanguage.org/d/d.php?f=mmuniwebfont.zip">Drupal (Everleaner)</a></h4>
-                  <p>This plugin will add MMWebFonts Yunghkio unicode link at the header of the drupal site. This plugin is only work at Drupal 6.</p>
-
-                  <h4><a href="http://vanillaforums.org/addon/mywebfont-plugin">Vanilla 2 (Saturngod)</a></h4>
-                  <p>This plugin will add MMWebFonts Yunghkio unicode link at the header of the vanilla 2 forum site.</p>
-                </div>
-              </div><!-- /row -->
-            </section>
-          </div>
-
-        <div id="footer">
-          <div class="inner">
-            <div class="container">
-              <p class="right"><a href="#">Back to top</a></p>
-              <p>
-                Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.<br>
-              </p>
-            </div>
-          </div>
+  <div class="container">
+    <!-- About Section
+    ============================== -->
+      <section id="about">
+        <div class="page-header">
+          <h1>About MMWebFonts <small>Brief history, browser support, and more</small></h1>
         </div>
-        
-        
-        <script src="js/custom.js"></script>
-      </body>
+        <div class="row">
+          <div class="col-xs-6">
+            <h3>History</h3>
+            <p>Around March 2011 , Myanmar Unicode were ready and blowing up for the blog. However, most of the blogger face the problem with font embed. Most of the cyber cafe didn't install the unicode font. Myanmar 3 is not universal font at this time. For Mac and iOS , we need to use Masterpiece Uni Sans.</p>
+            <p>Some of the bloggers wanted to change the unicode. However, they don't know about the font embed technology. So, I created the MMWebFonts for all of the myanmar unicode websites. Now, MMWebFonts has <strong>0.7 requested per second</strong> in everyday.</p>
+            <p>Read more on <a href="http://blog.saturngod.net/knowledgebase/myanmar-web-font">saturngod.net ›</a></p>
+          </div>
 
+          <div class="col-xs-3">
+            <h3>Browser support</h3>
+            <p>MMWebFonts is tested and supported in major modern browsers like Chrome, Safari, iOS, Internet Explorer, and Firefox.</p>
+            <ul>
+              <li>Chrome 10.0 or later</li>
+              <li>Safari 5.0 or later</li>
+              <li>Firefox 4.0 or later</li>
+              <li>iOS 4.0 or later</li>
+            </ul>
+          </div>
 
-      </html>
+          <div class="col-xs-3">
+            <h3>The Problem</h3>
+            <p>MMWebFonts can't support on Opera and Android. Opera supported font embed but it can't render myanmar unicode font rendering when font embed. Android still have a problem with myanmar unicode.</p>
+            <ul style="list-style:none">
+              <li>x Opera</li>
+              <li>x Android</li>
+            </ul>
+          </div>
+
+        </div> <!-- /row -->
+      </section>
+
+      <!-- Supported MMWebFonts start -->
+      <section id="supported">
+        <div class="page-header">
+          <h1>Supported MMWebFonts <small>MMWebFonts supported OFL and font embed allow license font</small></h1>
+        </div>
+        <div class="row">
+          <div class="col-xs-4">
+              <h2>Supported Font</h2>
+              <p>MMWebFonts support following font list.
+              <ul>
+                  <li>Myanmar3 from (<a href="http://myanmarnlp.org.mm/">Myanmar NLP</a>)</li>
+                  <li>Yunghkio from (<a href="http://www.yunghkio.com/unicode">Sai Di</a>)</li>
+                  <li>MyMyanmar from (<a href="http://www.mymyanmar.net">MyMyanmar</a>)</li>
+                  <li>Padauk from (<a href="http://www.thanlwinsoft.org/ThanLwinSoft/MyanmarUnicode/Fonts/Padauk.php">thanlwinsoft</a>)</li>
+                  <li>Zawgyi from (<a href="http://www.zawgyi.net">Zawgyi Group</a>)</li>
+              </ul>
+              <p>If your font is using OFL license and want to embed on MMWebFonts , <a href="mailto:saturngod@gmail.com">contact me</a></p>
+          </div>
+          <div class="col-xs-8 columns">
+              <h3>Font Face</h3>
+              <br/>
+              <p><strong>Myanmar3</strong> (<a href="http://myanmarnlp.org.mm/">Myanmar NLP</a>)</p>
+              <p class="myanmar3">မြန်မာစာသည် တို့စာ။</p>
+              <br/>
+              <p><strong>MyMyanmar Universal Font</strong> (<a href="http://www.mymyanmar.net/">MyMyanmar</a>)</p>
+              <p class="mymyanmar">မြန်မာစာသည် တို့စာ။</p>
+              <br/>
+
+              <p><strong>Yunghkio</strong> (<a href="http://www.yunghkio.com/unicode">Sai Di</a>)</p>
+              <p class="yunghkio">မြန်မာစာသည် တို့စာ။</p>
+              <br/>
+              <p><strong>Padauk</strong> (<a href="http://www.thanlwinsoft.org/ThanLwinSoft/MyanmarUnicode/Fonts/Padauk.php">thanlwinsoft</a>)</p>
+              <p class="padauk">မြန်မာစာသည် တို့စာ။</p>
+              <br/>
+              <p><strong>Zawgyi-One</strong> (<a href="http://www.zawgyi.net">Zawgyi Group</a>)</p>
+              <p class="zawgyi">ေဇာ္က ကေနသည္။</p>
+          </div>
+        </div><!-- /row -->
+      </section>
+      <!-- Supported MMWebFonts end -->
+
+      <!-- How to use start -->
+      <section id="how-to-use">
+        <div class="page-header">
+          <h1>How to use <small>add external stylesheet in your header and change font family</small></h1>
+        </div>
+        <div class="row">
+          <div class="col-xs-4">
+            <h2>Choose Font</h2>
+            <div class="input">
+            <form>
+                <select class="fontselect form-control">
+                <option selected="selected" value="myanmar3">Myanmar3</option>
+                <option value="yunghkio">Yunghkio</option>
+                <option value="padauk">Padauk</option>
+                <option value="mymyanmar">MyMyanmar</option>
+                <option value="zawgyi">Zawgyi-One</option>
+                </select>
+            </form>
+            </div>
+          </div>
+          <div class="col-xs-8">
+              <h3>Codes</h3>
+              <ul  class="nav nav-tabs">
+                <li class="active tabs_code" id="standard_click"><a href="#">Standard</a></li>
+                <li class="tabs_code" id="import_click"><a href="#">@import</a></li>
+              </ul></br>
+
+              <pre class="prettyprint linenums" id="codeNormal">&lt;link href='http://MMWebFonts.appspot.com/css?font=myanmar3' rel='stylesheet' type='text/css'/&gt;</pre>
+              <pre class="prettyprint linenums" id="codeImport">@import url('http://MMWebFonts.appspot.com/css?font=myanmar3');</pre>
+              <h3>Font Family</h3>
+              <p>Add following code in stylesheet font family.</p>
+              <pre class="prettyprint linenums" id="fontfamily">font-family:Myanmar3,Yunghkio;</pre>
+          </div>
+      </div> <!-- /row -->
+    </section>
+  <!-- How to use end -->        
+
+    <section id="plugins">
+    <div class="page-header">
+      <h1>Plugins <small>ready made plugin that use MMWebFonts</small></h1>
+    </div>
+    <div class="row">
+      <div class="col-xs-4">
+          <h2>List</h2>
+          MMWebFonts have following plugins
+          <ul>
+              <li>Wordpress</li>
+              <li>Joomla</li>
+              <li>Drupal</li>
+              <li>Vanilla 2</li>
+          </ul>
+      </div>
+        <div class="col-xs-8">
+          <h3>About Plugins</h3>
+          <h4><a href="http://wordpress.org/extend/plugins/mmunicode-embed/">Wordpress (Saturngod)</a></h4>
+          
+          <p>This plugin will add MMWebFonts link at the header of the wordpress site. You can choose font family in the admin panel.</p>
+          <h4><a href="http://www.zack-notes.net/joomzack15/joomla-cms/joomla-1-5-yunghkio-unicode-webfont-plugin.html">Joomla Unicode (Zack)</a></h4>
+          
+          <p>This plugin will add MMWebFonts link at the header of the joomla site. This plugin only support Yunghkio now.</p>
+          <h4><a href="http://www.zack-notes.net/joomzack15/joomla-cms/joomla-1-5-zawgyi-webfont-plugin.html">Joomla Zawgyi (Zack)</a></h4>
+          
+          <p>This plugin will add MMWebFonts zawgyi link at the header of the joomla site.</p>
+          <h4><a href="http://www.myanmarlanguage.org/d/d.php?f=mmuniwebfont.zip">Drupal (Everleaner)</a></h4>
+          
+          <p>This plugin will add MMWebFonts Yunghkio unicode link at the header of the drupal site. This plugin is only work at Drupal 6.</p>
+          <h4><a href="http://vanillaforums.org/addon/MMWebFonts-plugin">Vanilla 2 (Saturngod)</a></h4>
+          
+          <p>This plugin will add MMWebFonts Yunghkio unicode link at the header of the vanilla 2 forum site.</p>
+        </div>
+      </div><!-- /row -->
+    </section>
+  </div>
+  <div id="footer">
+    <div class="inner">
+      <div class="container">
+        <p class="right"><a href="#">Back to top</a></p>
+        <p>
+          Designed and built with with all the love in the world with BS3 + PHP by <a href="http://twitter.com/saturngod" target="_blank">@saturngod<a>
+        </p>
+      </div>
+    </div>
+  </div>
+  </body>
+  <script src="js/custom.js"></script>
+  <script>
+    !function ($) {
+      $(function(){
+        window.prettyPrint && prettyPrint()   
+      })
+    }(window.jQuery)
+</script>
+</html>
