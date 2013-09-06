@@ -94,3 +94,16 @@ padding-top: 60px;
 .mymyanmar {
     font-family:"MyMyanmar Universal",Myanmar3,Yunghkio,'Masterpiece Uni Sans';
 }
+
+#codeNormalTab {
+
+}
+
+#codeNormalTab > code {
+  margin-top: -17px;
+}
+
+#codeNormalTab , #codeImportTab , #fontfamilyTab{
+  background: #f8f8ff;
+}
+

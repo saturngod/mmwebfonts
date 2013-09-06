@@ -1,9 +1,23 @@
 $(document).ready(function(){
     
-    //init
-    prettyPrint();
+    function generateHighlight()
+    {
+      hljs.tabReplace = '    '; //4 spaces
+      
+      $("pre > code").each(function(ele,i) {
+        //fix for hightlight.js erro
+        var newHTML = $(this).html().replace(/&amp;gt;/gm,"&gt;").replace(/&amp;lt;/gm,"&lt;");
+        
+        $(this).html(newHTML);
 
-    $("#codeImport").hide();
+      });
+
+      $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
+    }
+    //init
+    generateHighlight();
+
+    $("#codeImportTab").hide();
     
     // $(".menu_click").click(function(){
        
@@ -18,12 +32,12 @@ $(document).ready(function(){
       console.log($(this).attr('id'));
       
       if($(this).attr('id')=="standard_click") {
-          $("#codeNormal").show();
-          $("#codeImport").hide();
+          $("#codeNormalTab").show();
+          $("#codeImportTab").hide();
       }
       else {
-          $("#codeNormal").hide();
-          $("#codeImport").show();
+          $("#codeNormalTab").hide();
+          $("#codeImportTab").show();
       }
       return false;
    });
@@ -65,6 +79,6 @@ $(document).ready(function(){
       
       $("#fontfamily").html("font-family:"+font_family+";");
        
-      prettyPrint();
+      generateHighlight();
    });
 });
