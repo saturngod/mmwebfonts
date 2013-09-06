@@ -4,10 +4,9 @@
       <meta charset="UTF8"/>
       <title>MMWebFonts</title>
       <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
-       <link rel="stylesheet" href="./stylesheets/extra.css">
-      <script>window.jQuery || document.write('<link href="./stylesheets/bootstrap.min.css"><\/script>')</script>
-      <link rel="stylesheet" href="/stylesheets/style.css">
-      <link rel="stylesheet" href="/stylesheets/prettify.css">
+      <link rel="stylesheet" href="./stylesheets/extra.css" rel="stylesheet">
+      <link rel="stylesheet" href="./stylesheets/style.css" rel="stylesheet">
+      <link rel="stylesheet" href="./stylesheets/prettify.css" rel="stylesheet">
 
       <!-- Fonts -->
       <link rel="stylesheet" href="./fonts/?font=yunghkio">
@@ -19,13 +18,12 @@
       <link rel="stylesheet" href="./fonts/?font=unimon">
       <link rel="stylesheet" href="./fonts/?font=mon3">
 
-      <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-      <script>
-      window.jQuery || document.write('<script src="./js/jquery.js"><\/script>')</script>
+      <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.js"></script>
 
   </head>
-  <body onload="prettyPrint();">
+  <body data-spy="scroll" data-target="#navbarTop">
 
   <!-- Github ribbon -->
   <a href="https://github.com/saturngod/MMWebFonts"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 1031" src="https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
@@ -227,70 +225,12 @@
     </div>
   </div>
   </body>
-  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="js/custom.js"></script>
   <script>
-  $(document).ready(function(){
-
-      //init
-      $("#codeImport").hide();
-
-        $(".menu_click").click(function(){
-
-           $(".menu_click").removeClass('active');
-           $(this).addClass('active');
-
-        });
-     $(".tabs_code").click(function(){
-        $(".tabs_code").removeClass('active');
-        $(this).addClass('active');
-
-        console.log($(this).attr('id'));
-
-        if($(this).attr('id')=="standard_click") {
-            $("#codeNormal").show();
-            $("#codeImport").hide();
-        }
-        else {
-            $("#codeNormal").hide();
-              $("#codeImport").show();
-        }
-        return false;
-     });
-
-     $(".fontselect").change(function(){
-
-        $("#codeNormal").html("&lt;link href='http://MMWebFonts.appspot.com/css?font="+$(this).val()+"' rel='stylesheet' type='text/css'/&gt;");
-        $("#codeImport").html("@import url('http://MMWebFonts.appspot.com/css?font="+$(this).val()+"');");
-
-        font_family="";
-        if($(this).val()=="myanmar3") {
-            font_family="Myanmar3,Yunghkio,'Masterpiece Uni Sans'";
-        }
-        else if($(this).val()=="yunghkio") {
-            font_family="Yunghkio,Myanmar3,'Masterpiece Uni Sans'";
-          }
-          else if($(this).val()=="padauk") {
-              font_family="padauk,Yunghkio,Myanmar3,'Masterpiece Uni Sans'";
-          }
-          else if($(this).val()=="mymyanmar") {
-                font_family="'MyMyanmar Universal',Myanmar3,Yunghkio,'Masterpiece Uni Sans'";
-          }
-          else if($(this).val()=="zawgyi") {
-              font_family="Zawgyi-One"
-          }
-
-          $("#fontfamily").html("font-family:"+font_family+";");
-
-        prettyPrint();
-     });
-  });
-
-$('.menu_click li a').click(function(e) {
-  var $this = $(this);
-  if (!$this.hasClass('active')) {
-    $this.addClass('active');
-  }
-  e.preventDefault();
-});
-    </script>
+    !function ($) {
+      $(function(){
+        window.prettyPrint && prettyPrint()   
+      })
+    }(window.jQuery)
+</script>
 </html>
