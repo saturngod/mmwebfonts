@@ -13,7 +13,7 @@ $current_url=substr(currentPageURL(),0,-9);
 $font_family="Master Piece Uni Sans";
 if(isset($_GET['font']))
 {
-	$font_file=strtolower($_GET['font']);	
+	$font_file=strtolower($_GET['font']);
 }
 else {
 	$font_file = "masterpiece";
@@ -34,7 +34,7 @@ else if($font_file=='myanmar3') {
 else if($font_file=='padauk') {
 	$font_file="padauk";
     $font_family="Padauk";
-}   
+}
 else if($font_file=='mymyanmar') {
 	$font_file="MyMMUnicodeUniversal";
     $font_family="MyMyanmar Universal";
@@ -51,8 +51,13 @@ else if($font_file=="mon3") {
 	$font_file = "mon3";
 	$font_family = "MON3 Anonta 1";
 }
+else if($font_file=="ourunicode") {
+	$font_file = "ourunicode";
+	$font_family = "Ours-Unicode";
+}
 
 $browsername = get_browser_name();
+$ie_version = get_ie_version();
 
 $font_type = "ttf";
 $is_mac = mac_os();
@@ -60,10 +65,11 @@ $is_mac = mac_os();
 $is_android = android_os();
 $is_webkit = webKit_browser();
 
-if($browsername=="ie")
+if($browsername=="ie" && $ie_version < 9)
 {
 	$font_type = "eot";
 }
+
 
 if(!is_force_font($font_file))
 {
@@ -84,7 +90,7 @@ if(!is_force_font($font_file))
 		$font_file="mon3";
 		$font_type="ttf";
 	}
-	
+
 	if($is_mac && $font_file !="masterpiece") {
 		$font_family="Masterpiece Uni Sans";
 		$font_file="masterpiece";
@@ -104,7 +110,7 @@ if(!is_force_font($font_file))
 
 }
 
-//check for android webkit because android 4.2 or later only support svg	
+//check for android webkit because android 4.2 or later only support svg
 if($is_android && $is_webkit && ($font_file =="zawgyi"))
 {
 	$font_type="svg";
@@ -121,12 +127,12 @@ if($font_type!="")
 
 		$css=$css."\nsrc:local('".$font_family."'),";
 		if(($browsername=="chrome" || $browsername=="firefox")  && $is_mac && !is_force_font($font_file)) {
-			$css=$css."url('".$font_path."') format('truetype-aat');\n}";			
+			$css=$css."url('".$font_path."') format('truetype-aat');\n}";
 		}
 		else if($font_type=="svg")
 		{
 			//svg need to put format to show correctly
-			$css=$css."url('".$font_path."') format('svg');\n}";	
+			$css=$css."url('".$font_path."') format('svg');\n}";
 		}
 		else {
 			$css=$css."url('".$font_path."');\n}";
@@ -134,7 +140,7 @@ if($font_type!="")
 	}
 	else {
 			$css=$css."\nsrc:url('".$font_path."?') format('embedded-opentype');";
-        	$css=$css."\n}";	
+        	$css=$css."\n}";
 	}
 
 	header("Access-Control-Allow-Origin: *");

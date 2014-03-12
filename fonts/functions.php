@@ -5,12 +5,25 @@
 */
 function is_force_font($font_file)
 {
-	$force_font = array("unimon","imon","zawgyi","mon3","myanmar3","mymmunicodeuniversal");
+	$force_font = array("unimon","imon","zawgyi","mon3","myanmar3","mymmunicodeuniversal","ourunicode");
 	if(in_array(strtolower($font_file), $force_font))
 	{
 		return true;
 	}
 	return false;
+}
+
+function get_ie_version()
+{
+	preg_match('/MSIE (.*?);/', $_SERVER['HTTP_USER_AGENT'], $matches);
+
+	if (count($matches)>1){
+	  //Then we're using IE
+	  $version = $matches[1];
+
+		return $version;
+	}
+	return 0;
 }
 
 function get_browser_name() {
@@ -29,7 +42,7 @@ function get_browser_name() {
         {
             return "android";
         }
-        
+
 		return "iPad";
 	}
 	else if(preg_match("/Android/",$user_agent))
