@@ -1,27 +1,9 @@
 $(document).ready(function(){
     
-    function generateHighlight()
-    {
-      hljs.tabReplace = '    '; //4 spaces
-      
-      $("pre > code").each(function(ele,i) {
-        //fix for hightlight.js erro
-        var newHTML = $(this).html().replace(/&amp;gt;/gm,"&gt;").replace(/&amp;lt;/gm,"&lt;");
-        
-        $(this).html(newHTML);
-
-      });
-
-      $('pre code').each(function(i, e) {hljs.highlightBlock(e)});
-    }
-
-    $('[data-spy="scroll"]').each(function () {
-      var $spy = $(this).scrollspy('refresh')
-    });
     //init
-    generateHighlight();
+    prettyPrint();
 
-    $("#codeImportTab").hide();
+    $("#codeImport").hide();
     
     // $(".menu_click").click(function(){
        
@@ -36,12 +18,12 @@ $(document).ready(function(){
       console.log($(this).attr('id'));
       
       if($(this).attr('id')=="standard_click") {
-          $("#codeNormalTab").show();
-          $("#codeImportTab").hide();
+          $("#codeNormal").show();
+          $("#codeImport").hide();
       }
       else {
-          $("#codeNormalTab").hide();
-          $("#codeImportTab").show();
+          $("#codeNormal").hide();
+          $("#codeImport").show();
       }
       return false;
    });
@@ -80,9 +62,17 @@ $(document).ready(function(){
       {
         font_family = "'MON3 Anonta 1'";
       }
+      else if($(this).val()=="imon")
+      {
+        font_family = "'iMon'";
+      }
+      else if($(this).val()=="oursunicode")
+      {
+        font_family = "'Ours-Unicode'";
+      }
       
       $("#fontfamily").html("font-family:"+font_family+";");
        
-      generateHighlight();
+      prettyPrint();
    });
 });

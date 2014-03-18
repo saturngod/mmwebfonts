@@ -1,20 +1,3 @@
-/* Specify class=linenums on a pre to get line numbering */
-ol.linenums { margin-top: 0; margin-bottom: 0 } /* IE indents via margin-left */
-li.L0,
-li.L1,
-li.L2,
-li.L3,
-li.L5,
-li.L6,
-li.L7,
-li.L8 { list-style-type: none /* this is the cause. Just remove it */ }
-/* Alternate shading for lines */
-li.L1,
-li.L3,
-li.L5,
-li.L7,
-li.L9 { background: #eee }
-
 
 #masthead, #footer {
   background-color: #049cd9;
@@ -88,27 +71,44 @@ padding-top: 60px;
 
 .myanmar3 {
     font-family:Myanmar3,Yunghkio,"Masterpiece Uni Sans";
+    font-size: 15px;
 }
 
 .yunghkio {
     font-family:"Masterpiece Uni Sans",Yunghkio,Myanmar3;
+    font-size: 15px;
 }
 
 .masterpiece {
   font-family:"Masterpiece Uni Sans",Yunghkio,Myanmar3; 
+  font-size: 15px;
 }
 .zawgyi {
     font-family:'Zawgyi-One';
+   font-size: 15px;
 }
 
 .padauk {
     font-family:"Masterpiece Uni Sans",padauk,Yunghkio,Myanmar3;
+    font-size: 15px;
 }
 
 .monanonta {
    font-family:"MON3 Anonta 1"; 
+  font-size: 15px;
+}
+
+.ourunicode {
+   font-family:"Ours-Unicode"; 
+  font-size: 15px;
+}
+
+.imon {
+   font-family:"iMon"; 
+   font-size: 14px;
 }
 
 .mymyanmar {
     font-family:"MyMyanmar Universal",Myanmar3,Yunghkio,'Masterpiece Uni Sans';
+    font-size: 14px;
 }

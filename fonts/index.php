@@ -1,158 +1,81 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
+include_once('fonts.php');
+include_once('functions.php');
 
-$php_version =(float)phpversion();
-
-date_default_timezone_set('Asia/Singapore');
-require_once('functions.php');
-
-//start page
-$current_url=substr(currentPageURL(),0,-9);
-
-$font_family="Master Piece Uni Sans";
 if(isset($_GET['font']))
 {
-	$font_file=strtolower($_GET['font']);
-}
-else {
-	$font_file = "masterpiece";
+    
+    $browsername = get_browser_name();
+    $is_android = android_os();
+    $is_webkit = webKit_browser();
+    $is_mac = mac_os();
+
+    $font = searchFont($_GET['font'],$fonts);
+
+    //if IE and less than version 9
+    //show EOT 
+    //if IS_MAC AND font not support Mac
+    //show default mac font
+    //if IS_CHROME and not support CHROMe
+    //show default font
+    //else
+    //show font
+    if($browsername=='ie' && get_ie_version() < 9)
+    {
+        showFont($font['font_family'],$font["font_file_eot"],"embedded-opentype");
+    }
+    else if($is_android && $is_webkit && $_GET['font'] == "zawgyi")
+    {
+        showFont($font['font_family'],$font["font_file"],"svg");
+    }
+    else if(($is_mac && !$font['support_mac']) || ($browsername=="chrome" && !$font['support_chrome']) || (!$is_mac && !$font['support_windows']))
+    {
+        showFont($font['font_family'],"mon3.ttf","");
+    }
+    else
+    {
+        showFont($font['font_family'],$font["font_file"],"");
+    }
 }
 
-if($font_file=='yunghkio') {
-	$font_file="yunghkio";
-    $font_family="Yunghkio";
-}
-else if($font_file=="masterpiece") {
-	$font_file="masterpiece";
-    $font_family="Masterpiece Uni Sans";
-}
-else if($font_file=='myanmar3') {
-	$font_file="myanmar3";
-    $font_family="Myanmar3";
-}
-else if($font_file=='padauk') {
-	$font_file="padauk";
-    $font_family="Padauk";
-}
-else if($font_file=='mymyanmar') {
-	$font_file="MyMMUnicodeUniversal";
-    $font_family="MyMyanmar Universal";
-}
-else if($font_file=='unimon') {
-	$font_file="UniMon";
-	$font_family="Uni Mon";
-}
-else if($font_file=='zawgyi') {
-	$font_family="Zawgyi-One";
-	$font_file="zawgyi";
-}
-else if($font_file=="mon3") {
-	$font_file = "mon3";
-	$font_family = "MON3 Anonta 1";
-}
-else if($font_file=="ourunicode") {
-	$font_file = "ourunicode";
-	$font_family = "Ours-Unicode";
-}
-
-$browsername = get_browser_name();
-$ie_version = get_ie_version();
-
-$font_type = "ttf";
-$is_mac = mac_os();
-
-$is_android = android_os();
-$is_webkit = webKit_browser();
-
-if($browsername=="ie" && $ie_version < 9)
+//////
+function searchFont($font,$fonts)
 {
-	$font_type = "eot";
+    foreach ($fonts as $value) {
+        if(strtolower($value['name'])==strtolower($font))
+        {
+            return $value;
+        }
+    }
+    return false;
 }
 
-
-if(!is_force_font($font_file))
-{
-	// if(($browsername=="chrome" || $browsername=="firefox")  && $is_mac) {
-	// 		$font_file="myanmar3";
-	// 		$font_family="Myanmar3";
-	// }
-
-	//check and forece Masterpiece if OS is apple related
-	if($browsername=='iPhone' or $browsername=='iPad' ) {
-		$font_family="Masterpiece Uni Sans";
-	    $font_file="masterpiece";
-	    $font_type="ttf";
-	}
-
-	if(!$is_mac && $font_file =="masterpiece") {
-		$font_family="MON3 Anonta 1";
-		$font_file="mon3";
-		$font_type="ttf";
-	}
-
-	if($is_mac && $font_file !="masterpiece") {
-		$font_family="Masterpiece Uni Sans";
-		$font_file="masterpiece";
-		$font_type="ttf";
-	}
-
-	/**
-	* comment it because firefox support font embed in android
-	**/
-	//for android unicode, masterpiece is better
-	// remove to check android because firefox may support unicode
-	// if($browsername=="android" && $font_file!='zawgyi') {
-	// 	$font_family="Masterpiece Uni Sans";
-	// 	$font_file="masterpiece";
-	// 	$font_type="ttf";
-	// }
-
-}
-
-//check for android webkit because android 4.2 or later only support svg
-if($is_android && $is_webkit && ($font_file =="zawgyi"))
-{
-	$font_type="svg";
-}
-
-if($font_type!="")
+/////
+function showFont($font_family,$font_file,$fomat="")
 {
 
-	$css ="@font-face {\nfont-family:'".$font_family."';";
+    $current_url=substr(currentPageURL(),0,-9);
 
-	$font_path=$current_url.$font_file.".".$font_type;
+    $css ="@font-face {\nfont-family:'".$font_family."';";
+    $font_path=$current_url.$font_file;
 
-	if($browsername!="ie") {
+    if($fomat=="")
+    {
+        $css=$css."\nsrc:local('".$font_family."'),";
+        $css=$css."url('".$font_path."');\n}";
+    }
+    else {
+        $css=$css."\nsrc:url('".$font_path."?') format('".$format."');\n}";
+    }
 
-		$css=$css."\nsrc:local('".$font_family."'),";
-		if(($browsername=="chrome" || $browsername=="firefox")  && $is_mac && !is_force_font($font_file)) {
-			$css=$css."url('".$font_path."') format('truetype-aat');\n}";
-		}
-		else if($font_type=="svg")
-		{
-			//svg need to put format to show correctly
-			$css=$css."url('".$font_path."') format('svg');\n}";
-		}
-		else {
-			$css=$css."url('".$font_path."');\n}";
-		}
-	}
-	else {
-			$css=$css."\nsrc:url('".$font_path."?') format('embedded-opentype');";
-        	$css=$css."\n}";
-	}
-
-	header("Access-Control-Allow-Origin: *");
-	header("Content-Type: text/css");
-
-	//add cache for css
-	$seconds_to_cache = 86400; //24 hour
-	$ts = gmdate("D, d M Y H:i:s", time() + $seconds_to_cache) . " GMT";
-	header("Expires: $ts");
-	header("Pragma: cache");
-	header("Cache-Control: max-age=$seconds_to_cache");
-	header("Content-type: text/css");
-
-	echo $css;
+    header("Access-Control-Allow-Origin: *");
+    header("Content-Type: text/css");
+    //add cache for css
+    $seconds_to_cache = 172800;
+    $ts = gmdate("D, d M Y H:i:s", time() + $seconds_to_cache) . " GMT";
+    header("Expires: $ts");
+    header("Pragma: cache");
+    header("Cache-Control: max-age=$seconds_to_cache");
+    header("Content-type: text/css");
+    echo $css;
 }
