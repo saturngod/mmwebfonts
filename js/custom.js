@@ -55,9 +55,9 @@ $(document).ready(function(){
       if($(this).val()=="myanmar3") {
           font_family="Myanmar3,Yunghkio,'Masterpiece Uni Sans'";
       }
-    else if($(this).val()=="masterpiece") {
+      else if($(this).val()=="masterpiece") {
         font_family="'Masterpiece Uni Sans',Yunghkio,Myanmar3";
-    }
+      }
       else if($(this).val()=="yunghkio") {
           font_family="Yunghkio,Myanmar3,'Masterpiece Uni Sans'";
       }
@@ -76,9 +76,11 @@ $(document).ready(function(){
       else if($(this).val()=="unimon") {
           font_family="'Uni Mon'";
       }
-      else if($(this).val()=="mon3")
-      {
+      else if($(this).val()=="mon3") {
         font_family = "'MON3 Anonta 1'";
+      }
+      else if($(this).val()=="myanmarcensus") {
+        font_family = "'Myanmar Census'";
       }
       
       $("#fontfamily").html("font-family:"+font_family+";");
